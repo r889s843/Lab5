@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Password</title>
+    </head>
+
+    <body>
+        <h1>EECS Lab5 Exercise 1</h1>
+        <p>This page verifies passwords. Enter your password in both fields and click verify.</p>
+        <label for="initialPassword">Password: </label>
+        <input id="initialPassword" type="text"></textarea><br>
+        <label for="verifyPassword">Verify: </label>
+        <input id="verifyPassword" type="password"></textarea><br>
+        <button id="verify" onclick="verify()">Verify</button>
+        
+        <br><br>
+        <button><a href="index.html">Home</a></button>
+
+        <script>
+            let initialPassword = document.getElementById("initialPassword");
+            let verifyPassword =  document.getElementById("verifyPassword");
+            let button = document.getElementById("verify");
+
+            let verify = function() {
+                if(initialPassword.value.length < 8) {
+                    button.style.backgroundColor = "red";
+                    alert("Password must be at least 8 characters.");
+                }
+                else if (initialPassword.value != verifyPassword.value) {
+                    button.style.backgroundColor = "red";
+                    alert("Passwords do not match.");
+                }
+                else {
+                    button.style.backgroundColor = "green";
+                }
+            }
+        </script>
+    </body>
+</html>

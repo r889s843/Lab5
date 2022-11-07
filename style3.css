@@ -1,0 +1,22 @@
+p
+{
+    background-color:green; color: black;
+    font-family: cursive; font-size: 22pt;
+}
+
+p.biography:hover
+{
+    background-color: lightblue;
+}
+
+body
+{
+    background-image: url("background3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1:hover {
+    background-color: red;
+}

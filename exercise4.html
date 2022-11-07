@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>CSS Manipulation</title>
+    </head>
+
+    <body>
+        <h1>EECS Lab5 Exercise 4</h1>
+
+        <p id="dummy">
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+            dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text 
+        </p>
+        <br><br>
+
+        <p>
+            Please enter RBG values to change the dummy text above. (rgb 0-255)
+        </p>
+        <h3>Border</h3>
+        <label for="borderRed">Red Value:</label>
+        <input id="borderRed" type="text"><br>
+        <label for="borderGreen">Green Value:</label>
+        <input id="borderGreen" type="text"><br>
+        <label for="borderBlue">Blue Value:</label>
+        <input id="borderBlue" type="text"><br>
+        <label for="borderWidth">Width:</label>
+        <input id="borderWidth">
+
+        <h3>Background Color</h3>
+        <label for="colorRed">Red Value:</label>
+        <input id="colorRed" type="text"><br>
+        <label for="colorGreen">Green Value:</label>
+        <input id="colorGreen" type="text"><br>
+        <label for="colorBlue">Blue Value:</label>
+        <input id="colorBlue" type="text"><br><br>
+
+
+        <button onclick="applyChanges()">Apply</button>
+
+        <br><br>
+        <button><a href="index.html">Home</a></button>
+
+        <script>
+            let dummy = document.getElementById("dummy")
+            let borderRed = document.getElementById("borderRed");
+            let borderGreen = document.getElementById("borderGreen");
+            let borderBlue = document.getElementById("borderBlue");
+            let borderWidth = document.getElementById("borderWidth");
+            let colorRed = document.getElementById("colorRed");
+            let colorGreen = document.getElementById("colorGreen");
+            let colorBlue = document.getElementById("colorBlue");
+            
+            function applyChanges(){
+                dummy.style.backgroundColor = stringColor(colorRed.value, colorGreen.value, colorBlue.value);
+                dummy.style.border = stringBorder(borderRed.value, borderGreen.value, borderBlue.value, borderWidth.value);
+            }
+
+            function stringBorder(r, g, b, w) {
+                return w+"px solid rgb("+r+","+g+","+b+")";
+            }
+
+            function stringColor(r, g, b){
+                return "rgb("+r+","+g+","+b+")";
+            }
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Mountains</title>
+    </head>
+
+    <body>
+        <h1>EECS Lab5 Exercise 2</h1>
+        <button id="prev" onclick="previous()">Previous</button>
+        <button id="next" onclick="next()">Next</button><br>
+
+
+        <img id="one" src="mtn1.jpg" width="600" height="400">
+        <img id="two" src="mtn2.jpg" width="600" height="400">
+        <img id="three" src="mtn3.jpg" width="600" height="400">
+        <img id="four" src="mtn4.jpg" width="600" height="400">
+        <img id="five" src="mtn5.jpg" width="600" height="400">
+
+        <br><br>
+        <button><a href="index.html">Home</a></button>
+
+        <script>
+            let pics = [
+            document.getElementById("one"),
+            document.getElementById("two"),
+            document.getElementById("three"),
+            document.getElementById("four"),
+            document.getElementById("five")
+            ];
+            let currentSlide = 0
+
+            pics[1].style.display = "none";
+            pics[2].style.display = "none";
+            pics[3].style.display = "none";
+            pics[4].style.display = "none";
+
+
+            let next = function() {
+                currentSlide++;
+                if (currentSlide >= pics.length) {
+                    currentSlide = 0;
+                }
+
+                for (let i = 0; i < pics.length; i++){
+                    if (i == currentSlide) {
+                        pics[i].style.display = "initial";
+                    }
+                    else {
+                        pics[i].style.display = "none";
+                    }
+                }
+            }
+
+            let previous = function() {
+                currentSlide--;
+                if (currentSlide < 0) {
+                    currentSlide = pics.length - 1;
+                }
+
+                for (let i = 0; i < pics.length; i++){
+                    if (i == currentSlide) {
+                        pics[i].style.display = "initial";
+                    }
+                    else {
+                        pics[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
